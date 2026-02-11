@@ -1,0 +1,20 @@
+{
+  "name": "tracemem",
+  "version": "0.1.0",
+  "description": "Decision memory for Claude Code. Automatically tracks architectural decisions, code changes, and engineering choices into TraceMem's governed audit trail.",
+  "author": {
+    "name": "reDB Technology Inc.",
+    "url": "https://www.tracemem.com"
+  },
+  "homepage": "https://www.tracemem.com/docs/guides/claude-code-integration",
+  "repository": "https://github.com/tracemem/tracemem-claude-code-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "decision-tracking",
+    "audit-trail",
+    "governance",
+    "traceability",
+    "memory",
+    "decisions"
+  ]
+}

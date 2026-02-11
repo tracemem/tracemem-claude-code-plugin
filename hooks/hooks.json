@@ -1,0 +1,59 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session-start.sh",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Before completing this session, check if there is an active TraceMem decision envelope open. If there is, review the work done in this session and determine if any significant decisions were made but not yet recorded. If you find unrecorded decisions, add them via mcp__tracemem__decision_add_context. Then close the decision with mcp__tracemem__decision_close(action='commit', reason='<session summary>'). If no decision envelope is open, do nothing. Do not block the stop — always allow it to proceed.",
+            "timeout": 30000
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A file was just written or edited. Based on the tool input ($TOOL_INPUT), determine if this change represents a significant engineering decision (new dependency, schema change, API modification, architectural choice). If yes, and a TraceMem decision envelope is currently open, add a decision record via mcp__tracemem__decision_add_context with structured data including category, summary, and rationale. If no TraceMem envelope is open or the change is routine (formatting, typo fix, comment), do nothing. Respond with approve.",
+            "timeout": 15000
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A bash command was just executed. Based on the tool input ($TOOL_INPUT) and result ($TOOL_RESULT), check if this represents a significant operational decision (package installation, database migration, deployment command, infrastructure change). If yes, and a TraceMem decision envelope is open, add a decision record. If the command was routine (ls, cat, git status, test runs), do nothing. Respond with approve.",
+            "timeout": 15000
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session-end.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "tracemem": {
+    "type": "http",
+    "url": "${TRACEMEM_MCP_URL:-https://mcp.tracemem.com}",
+    "headers": {
+      "Authorization": "Bearer ${TRACEMEM_API_KEY}"
+    }
+  }
+}
