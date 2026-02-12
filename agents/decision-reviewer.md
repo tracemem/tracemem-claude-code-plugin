@@ -1,10 +1,6 @@
 ---
-description: "Reviews the accumulated decision trace at the end of a session, identifies gaps, and ensures the decision record is complete before closing."
-capabilities:
-  - "Review decision traces for completeness"
-  - "Identify significant decisions that may have been missed"
-  - "Generate decision summaries for team visibility"
-  - "Suggest additional context before closing a decision envelope"
+name: decision-reviewer
+description: "Reviews the accumulated decision trace at the end of a session, identifies gaps, and ensures the decision record is complete before closing. Reviews decision traces for completeness, identifies significant decisions that may have been missed, generates decision summaries for team visibility, and suggests additional context before closing a decision envelope."
 ---
 
 # Decision Reviewer Agent

@@ -1,11 +1,6 @@
 ---
-description: "Specialized agent that identifies and records key architectural and engineering decisions during coding sessions. Invoked automatically when Claude detects significant technical choices."
-capabilities:
-  - "Identify architectural decisions during code changes"
-  - "Record technology choices with rationale and alternatives considered"
-  - "Capture schema changes, API contract modifications, and infrastructure decisions"
-  - "Add structured context to TraceMem decision envelopes"
-  - "Use one-shot decision recording when no envelope is active"
+name: decision-tracker
+description: "Specialized agent that identifies and records key architectural and engineering decisions during coding sessions. Identifies architectural decisions during code changes, records technology choices with rationale and alternatives considered, captures schema changes, API contract modifications, and infrastructure decisions, adds structured context to TraceMem decision envelopes, and uses one-shot decision recording when no envelope is active."
 ---
 
 # Decision Tracker Agent

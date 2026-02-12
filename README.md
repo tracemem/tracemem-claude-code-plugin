@@ -6,14 +6,26 @@ Decision memory for Claude Code. Automatically tracks architectural decisions, c
 
 ### 1. Install the plugin
 
-**From the marketplace:**
+**From GitHub (recommended):**
 
 ```
 /plugin marketplace add tracemem/tracemem-claude-code-plugin
-/plugin install tracemem
+/plugin install tracemem@tracemem-plugins
+```
+
+**Or install directly from GitHub without adding the marketplace:**
+
+```bash
+claude plugin install tracemem@tracemem-plugins --marketplace-source github:tracemem/tracemem-claude-code-plugin
 ```
 
 **From a local clone:**
+
+```bash
+git clone https://github.com/tracemem/tracemem-claude-code-plugin.git
+```
+
+Then in Claude Code:
 
 ```
 /plugin install /path/to/tracemem-claude-code-plugin

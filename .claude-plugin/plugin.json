@@ -1,6 +1,6 @@
 {
   "name": "tracemem",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Decision memory for Claude Code. Automatically tracks architectural decisions, code changes, and engineering choices into TraceMem's governed audit trail.",
   "author": {
     "name": "reDB Technology Inc.",
