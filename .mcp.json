@@ -1,11 +1,9 @@
 {
-  "mcpServers": {
-    "tracemem": {
-      "type": "url",
-      "url": "${TRACEMEM_MCP_URL:-https://mcp.tracemem.com}",
-      "headers": {
-        "Authorization": "Agent ${TRACEMEM_API_KEY}"
-      }
+  "tracemem": {
+    "type": "http",
+    "url": "${TRACEMEM_MCP_URL:-https://mcp.tracemem.com}",
+    "headers": {
+      "Authorization": "Agent ${TRACEMEM_API_KEY}"
     }
   }
 }
