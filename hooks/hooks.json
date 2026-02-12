@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "Before completing this session, check if there is an active TraceMem decision envelope open. If there is, review the work done in this session and determine if any significant decisions were made but not yet recorded. If you find unrecorded decisions, add them via mcp__tracemem__decision_add_context. Then close the decision with mcp__tracemem__decision_close(action='commit', reason='<session summary>'). If no decision envelope is open, do nothing. Do not block the stop — always allow it to proceed.",
+            "prompt": "Before completing this session, check if there is an active TraceMem decision envelope open. If there is, review the work done in this session and determine if any significant decisions were made but not yet recorded. If you find unrecorded decisions, add them via mcp__tracemem__decision_add_context. Then close the decision with mcp__tracemem__decision_close(action='commit', reason='<session summary>'). If no decision envelope is open, do nothing. Do not block the stop. You MUST respond with valid JSON only. Respond with {} to allow the stop to proceed.",
             "timeout": 30000
           }
         ]
